@@ -13,4 +13,21 @@ void swap(Process * a, Process * b) {
 	* a = * b;
 	* b = temp;
 }
+void sort(Process p[], int n) {
+	int i, j;
+	short swapped;	
+	for (i = 0; i < n; ++i) {
+		swapped = 0;
+		for (j = 0; j < n-i-1; ++j)
+		{
+			if (p[j].arr_time > p[j+1].arr_time)
+			{
+				swap(&p[j], &p[j+1]);
+				swapped = 1;
+			}
+		}
+		if (swapped == 0)
+			break;
+	}
+}
 
